@@ -24,59 +24,50 @@
 
 		}
 
+		h1
+		{
+			text-align: center;
+		}
+
 		.content-container
 		{
 			background-color: #242424;
-			border: 2px solid #245DDA;
+			border: 1px solid rgb(21,78,202);
 			border-radius: 10px 10px 2px 2px;
-			overflow: visible;
+			overflow: hidden;
 
 			margin: 0px;
 			padding: 0px;
 
 			/*Makes content resizable and central*/
-			width: 90%;
-			height: 90%;
+			width: 95%;
+			height: 95%;
 			box-sizing: border-box;
+			position: relative;
 		}
-		h1
+
+		.window-bar
 		{
-			padding: 0px;
+			width: 100%;
+			padding: 4px;
 			margin: 0px;
-		}
-		nav
-		{
-			background-color: #245DDA;
-			border-radius: 10px 10px 0px 0px;
-			border: 2px solid #245DDA;
-			overflow: hidden;
 
-			box-shadow: inset 0.2em 0.2em 0.2em 0 rgba(255,255,255,0.5), inset -0.2em -0.2em 0.2em 0 rgba(0,0,0,0.5);
-			padding: 0px;
-
-			margin-left: -2px;
-			margin-right: -2px;
-			margin-top: -2px;
-		}
-		nav a
-		{
+			font-size: 28px;
+			font-family: "Trebuchet MS", sans-serif;
+			text-shadow: 2px 2px 2px rgba(0,0,25,0.5);
 			color: white;
-			text-decoration: none;
-			padding: 10px;
-			margin-right: 10px;
+
+			background-color: rgb(36,93,218);
+			box-shadow: inset 0.2em 0.2em 0.2em 0 rgba(255,255,255,0.1), inset -0.2em -0.2em 0.2em 0 rgba(0,0,0,0.1);
+			border-bottom: 1px solid rgb(21,78,202);
+
 		}
+
 	</style>
 </head>
 <body>
 	<div class="content-container">
-		<h1>
-			<nav>
-				<a href="https://anotherusercalledh.github.io/Demo-Website/">Click me</a>
-			</nav>
-		</h1>
-		<p>General Kenobi :)</p>
-		<script src="script.js"></script> 
+		<h1 class="window-bar"> Welcome </h1>
 	</div>
-
 </body>
 </html>
