@@ -9,6 +9,7 @@
 		{
 			font-family: Arial, sans-serif;
 			color: white;
+			background-color: #000000;
 
 			margin: 0px;
 			padding: 0px;
@@ -18,23 +19,25 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-
 			width: 100vw;
 			height: 100vh;
-			background-color: #000000;
+
 		}
 
 		.content-container
 		{
-			width: 90%;
-			height: 90%;
-
-			padding: 0px;
 			background-color: #242424;
 			border: 2px solid #245DDA;
-			box-sizing: border-box;
 			border-radius: 10px 10px 2px 2px;
 			overflow: hidden;
+
+			margin: 0px;
+			padding: 0px;
+
+			/*Makes content resizable and central*/
+			width: 90%;
+			height: 90%;
+			box-sizing: border-box;
 		}
 		h1
 		{
@@ -44,10 +47,11 @@
 		nav
 		{
 			background-color: #245DDA;
-/*			border-radius: 10px 10px 0px 0px;
-			border: 1px solid #000000;
-			overflow: hidden;*/
-/*			box-shadow: inset 0.2em 0.2em 0.2em 0 rgba(255,255,255,0.5), inset -0.2em -0.2em 0.2em 0 rgba(0,0,0,0.5);*/
+/*			border-radius: 10px 10px 0px 0px;*/
+/*			border: 1px solid #000000;*/
+			overflow: hidden;
+			
+			box-shadow: inset 0.2em 0.2em 0.2em 0 rgba(255,255,255,0.5), inset -0.2em -0.2em 0.2em 0 rgba(0,0,0,0.5);
 			padding: 0px;
 		}
 		nav a
