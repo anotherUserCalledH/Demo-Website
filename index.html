@@ -1,108 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hello There</title>
-  <style>
-    body {
-  background: #202020;
-  font-family: arial;
-  color: #f0f0f0;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Web Page</title>
+    
+    <style>
+        /* Define styles for the navigation bar */
+        nav {
+            background: linear-gradient(to bottom, #4c72a4, #284c7d); /* Gradient background */
+            padding: 10px;
+            border-bottom: 2px solid #0c1c31; /* Border at the bottom */
+            border-top-left-radius: 8px; /* Rounded corners for the top-left */
+            border-top-right-radius: 8px; /* Rounded corners for the top-right */
+            overflow: hidden; /* Hide overflow to ensure rounded corners are fully visible */
+        }
 
-/* row with flex class for header items  */
-.row {
-  display: flex;
-}
-.box {
-  padding: 0;
-  margin: 0;
-}
-
-.container {
-  width: 400px;
-  height: 200px;
-  border: 1px solid red;  
-}
-
-.boxMiddle {
-  width: calc(100% - 121px) !important;
-  background-size: cover;
-  padding-left: 20px;
-}
-
-.LM {
-  width: 1px;
-  border: 1px solid blue;
-  height: calc(100% - 30px) !important;
-  left: 0px;
-}
-
-.RM {
-  width: 1px;
-  border: 1px solid blue;
-  height: calc(100% - 30px) !important;
-  right: 0px;
-  position: relative;
-}
-
-.bottom {
-  width: 100%;
-  height: 0px;
-  border: 1px solid blue;
-}
-
-.content {
-  background: #505050;
-  
-/*   padding for content area */
-  padding: 10px;
-  
-  
-/*   height minus the padding */
-  height: 150px;
-}
-
-.TL {
-  width: 25px;
-  height: 29px;
-  background: url("");
-}
-
-.TM {
-  width: 200px;
-  height: 29px;
-  line-height: 26px;
-  background: url("");
-}
-
-.TR {
-  width: 75px;
-  height: 29px;
-  background: url("");
-}
-
-  </style>
+        /* Style for the navigation links */
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-  
-  <!--   row with flex -->
-  <div class="row">
-    <div class="TL box"></div>
-    <div class="TM box boxMiddle">Heading</div>
-    <div class="TR box"></div>
-    <div class="LM box"></div>
-  </div><!-- END  row with flex -->
-  
-  <!--   content area -->
-  <div>
-    <div class="content box">content here.</div>
-    <div class="RM box"></div>
-    <div class="bottom"></div>
-  </div><!--  END content area -->
-  </div>
-  <script src="script.js"></script> 
+    <!-- Navigation Bar -->
+    <nav>
+        <!-- Navigation Link -->
+        <a href="#">Click me</a>
+    </nav>
+
+    <!-- Rest of your page content goes here -->
+    <p>This is the content of your page.</p>
 </body>
 </html>
