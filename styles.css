@@ -22,10 +22,14 @@ body
 		border-radius: 10px 10px 2px 2px;
 		overflow: hidden;
 
+/*		makes content stack vertically*/
+		display: flex;
+		flex-direction: column;
+
 		margin: 0px;
 		padding: 0px;
 
-		/*Makes content resizable and central*/
+		/*Makes container resizable and central*/
 		width: calc(100% - 64px);
 		height: calc(100% - 64px);
 		box-sizing: border-box;
@@ -51,8 +55,10 @@ body
 
 	#canvas-container
 	{
-		display: flex; /* Use flexbox */
-		justify-content: center; /* Center horizontally */
-		align-items: center; 
+/*		sets flex to grow*/
+		flex: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 }
