@@ -1,10 +1,11 @@
 precision mediump float;
 
-//matches the varying variable in the vertex shader
+uniform float millis;
+
 varying vec2 pos;
 
 void main()
 {
-	//pos contains x and y, so serves as both the first and second co-ordinates
-	gl_FragColor = vec4(pos, 1.0, 1.0);
+	float red = sin((pos.x * 16.0) + (millis/1000.0));
+	gl_FragColor = vec4(red, (24.0/255.0), (24.0/255.0), 1.0);
 }

@@ -25,8 +25,6 @@ function draw()
 	//wipes the screen in each frame
 	clear();
 
-	//draws something in order to run the shader
-	rect(0, 0, width, height);
-
-	// ellipse(0, 0, width, height, 150);
+	ellipse(0, 0, width, height, 150);
+	exampleShader.setUniform("millis", millis());
 }
