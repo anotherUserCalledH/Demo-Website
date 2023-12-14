@@ -57,6 +57,8 @@ body
 	{
 /*		sets flex to grow*/
 		flex: 1;
+
+/*		centres content*/
 		display: flex;
 		justify-content: center;
 		align-items: center;
