@@ -16,7 +16,7 @@ function setup()
 	//tell p5 to use the shader
 	shader(exampleShader);
 
-	//turns of shape outlines
+	//turns off shape outlines
 	noStroke();
 }
 
@@ -25,6 +25,6 @@ function draw()
 	//wipes the screen in each frame
 	clear();
 
-	ellipse(0, 0, width, height, 150);
+	ellipse(0, 0, width, height, 1000);
 	exampleShader.setUniform("millis", millis());
 }

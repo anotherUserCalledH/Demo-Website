@@ -17,7 +17,7 @@ body
 
 	.content-container
 	{
-		background-color: #242424;
+		background-color: rgb(36,36,36);
 		border: 1px solid rgb(21,78,202);
 		border-radius: 10px 10px 2px 2px;
 		overflow: hidden;
