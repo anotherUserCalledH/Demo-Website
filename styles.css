@@ -15,9 +15,9 @@ body
 	width: 100vw;
 	height: 100vh;
 
-	.content-container
+	.window
 	{
-		background-color: rgb(36,36,36);
+		background-color: rgb(240,236,228);
 		border: 1px solid rgb(21,78,202);
 		border-radius: 10px 10px 2px 2px;
 		overflow: hidden;
@@ -29,9 +29,11 @@ body
 		margin: 0px;
 		padding: 0px;
 
-		/*Makes container resizable and central*/
-		width: calc(100% - 64px);
-		height: calc(100% - 64px);
+		/*Makes container resizable*/
+/*		width: calc(100% - 64px);
+		height: calc(100% - 64px);*/
+
+/*		makes container central*/
 		box-sizing: border-box;
 		position: relative;
 	}
@@ -53,14 +55,44 @@ body
 		border-bottom: 1px solid rgb(21,78,202);
 	}
 
+	.window-content-container
+	{
+		border: 1px solid rgb(21,78,202);
+		padding: 10px;
+		display: flex;
+
+		/*		makes content stack vertically*/
+		flex-direction: column;
+	}
+
+	.window-content
+	{
+		font-family: "Tahoma", sans-serif;
+		color: black;
+		max-width: 500px;
+		margin: 10px;
+		font-size: 15px;
+	}
+
+	button
+	{
+		width: max-content;
+		align-self: center;
+	}
+
+	#box-title
+	{
+		font-family: "Tahoma", sans-serif;
+		color: black;
+		text-align: center;
+		font-size: 15px;
+		text-decoration: underline;
+		text-shadow: 0.1px 0.1px 0.1px rgba(0, 0, 0, 1);
+	}
+
 	#canvas-container
 	{
 /*		sets flex to grow*/
 		flex: 1;
-
-/*		centres content*/
-		display: flex;
-		justify-content: center;
-		align-items: center;
 	}
 }
