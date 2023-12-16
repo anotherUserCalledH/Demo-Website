@@ -1,6 +1,6 @@
 console.log("Hello from JavaScript!");
 
-let exampleShader;
+let ringShader;
 
 let isInitalised;
 let audioPlayer;
@@ -8,7 +8,8 @@ let beatArray;
 let beatIndex;
 let circleIndex;
 let noCircles;
-let circles = [];
+let circleTimes = [];
+let circleColours = [];
 
 
 function stereoToMono(samples)
@@ -63,8 +64,6 @@ async function playVisualiser()
 		//FileReader is an async method, so the onload function will be called when it is ready
 		reader.onload = async function(fileEvent)
 		{
-			//the decodeAudioData accepts two arguments - the data to decode and a success callback
-			//the callback function is called when the decoding is complete
 			let buffer = await audioContext.decodeAudioData(fileEvent.target.result);
 			
 			beatArray = calcTempo(buffer);
@@ -77,20 +76,25 @@ async function playVisualiser()
 	}
 }
 
-function drawBeat(audioTime)
+function getCircles(audioTime)
 {
-	for(let creationTime of circles)
+	let circleRadii = [];
+
+	for(let currentCircle = 0; currentCircle < noCircles; currentCircle++)
 	{
+		let creationTime = circleTimes[currentCircle];
 		let diameter = 125 + Math.pow((audioTime - creationTime), 1.5) * 250;
-		ellipse(width/2.0, height/2.0, diameter);
+		circleRadii[currentCircle] = (diameter/2.0)/width;
 	}
+
+	return circleRadii;
 }
 
-function updateBeat(audioTime)
+function updateCircles(audioTime)
 {
 	if(audioTime > beatArray[beatIndex])
 	{
-		circles[circleIndex] = audioTime;
+		circleTimes[circleIndex] = audioTime;
 		
 		circleIndex ++;
 		if(circleIndex >= noCircles)
@@ -107,9 +111,6 @@ function updateBeat(audioTime)
 			}
 		}
 	}
-
-	clear();
-	drawBeat(audioTime);
 }
 
 function initialiseSketch()
@@ -118,37 +119,49 @@ function initialiseSketch()
 
 	beatIndex = 0;
 	circleIndex = 0;
-	noCircles = 8;
+	noCircles = 8; //if this is changed, the shader must be updated
+
+	for(let currentCircle = 0; currentCircle < noCircles; currentCircle++)
+	{
+		let newColour = [random() * 1.5, random() * 1.5, random() * 1.5];
+		circleColours = circleColours.concat(newColour);
+	}
+
+	console.log(circleColours);
 
 	isInitialised = true;
 }
 
-// load in the shader
 function preload()
 {
-	// exampleShader = loadShader('example.vert', 'example.frag');
+	ringShader = loadShader('template.vert', 'ring.frag');
 }
 
 function setup()
 {
-	let canvas = createCanvas(600, 600);
+	let canvas = createCanvas(600, 600, WEBGL);
 	canvas.parent('canvas-container');
-	noFill();
-	// fill("red");
+	noStroke();
 
 	isInitialised = false;
 
-	//tell p5 to use the shader
-	// shader(exampleShader);
+	shader(ringShader);
 }
 
 function draw()
 {
 	if(isInitialised === true)
 	{
-		updateBeat(audioPlayer.time());
+		clear();
 
-		
-		// exampleShader.setUniform("millis", millis());
+		let audioTime = audioPlayer.time();
+		updateCircles(audioTime);
+		circleRadii = getCircles(audioTime);
+		ringShader.setUniform("colours", circleColours);
+		ringShader.setUniform("circles", circleRadii);
+
 	}
+	rect(0, 0, width, height);
 }
+
+//http-server -c-1
