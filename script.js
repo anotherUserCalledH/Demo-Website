@@ -159,9 +159,8 @@ function draw()
 		circleRadii = getCircles(audioTime);
 		ringShader.setUniform("colours", circleColours);
 		ringShader.setUniform("circles", circleRadii);
-
+		rect(0, 0, width, height);
 	}
-	rect(0, 0, width, height);
 }
 
 //http-server -c-1
