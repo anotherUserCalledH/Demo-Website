@@ -1,98 +1,48 @@
+﻿@import url("bootstrap-grid.min.css");
+@import url("windowsxp-theme.css");
+
+*
+{
+	margin: 0px;
+	padding: 0px;
+}
+
 body
 {
 	font-family: Arial, sans-serif;
-	color: white;
-	background-color: #000000;
+}
 
-	margin: 0px;
-	padding: 0px;
+.main-div
+{
+	padding: 10px;
+	font-size: 15px;
 
-	/*Makes content resizeable and central*/
-	box-sizing: border-box;
+	/*makes content stack vertically*/
 	display: flex;
-	align-items: center;
+	flex-direction: column;
+}
+
+.main-div > *
+{
+	margin: 10px;
+}
+
+/*.main-div > p:nth-child(2)
+{
+	max-width: 500px;
+}*/
+
+.main-div > button
+{
+	width: max-content;
+	align-self: center;
+	padding-inline: 6px;
+}
+
+#canvas-container
+{
+	flex: 1;
+	margin: 0px;
 	justify-content: center;
-	width: 100vw;
-	height: 100vh;
-
-	.window
-	{
-		background-color: rgb(240,236,228);
-		border: 1px solid rgb(21,78,202);
-		border-radius: 10px 10px 2px 2px;
-		overflow: hidden;
-
-/*		makes content stack vertically*/
-		display: flex;
-		flex-direction: column;
-
-		margin: 0px;
-		padding: 0px;
-
-		/*Makes container resizable*/
-/*		width: calc(100% - 64px);
-		height: calc(100% - 64px);*/
-
-/*		makes container central*/
-		box-sizing: border-box;
-		position: relative;
-	}
-
-	.window-bar
-	{
-		width: 100%;
-		padding: 4px;
-		padding-left: 8px;
-		margin: 0px;
-
-		font-size: 28px;
-		font-family: "Trebuchet MS", sans-serif;
-		text-shadow: 2px 2px 2px rgba(0,0,25,0.5);
-		color: white;
-
-		background-color: rgb(36,93,218);
-		box-shadow: inset 0.2em 0.2em 0.2em 0 rgba(255,255,255,0.1), inset -0.2em -0.2em 0.2em 0 rgba(0,0,0,0.1);
-		border-bottom: 1px solid rgb(21,78,202);
-	}
-
-	.window-content-container
-	{
-		border: 1px solid rgb(21,78,202);
-		padding: 10px;
-		display: flex;
-
-		/*		makes content stack vertically*/
-		flex-direction: column;
-	}
-
-	.window-content
-	{
-		font-family: "Tahoma", sans-serif;
-		color: black;
-		max-width: 500px;
-		margin: 10px;
-		font-size: 15px;
-	}
-
-	button
-	{
-		width: max-content;
-		align-self: center;
-	}
-
-	#box-title
-	{
-		font-family: "Tahoma", sans-serif;
-		color: black;
-		text-align: center;
-		font-size: 15px;
-		text-decoration: underline;
-		text-shadow: 0.1px 0.1px 0.1px rgba(0, 0, 0, 1);
-	}
-
-	#canvas-container
-	{
-/*		sets flex to grow*/
-		flex: 1;
-	}
+	display: flex;
 }

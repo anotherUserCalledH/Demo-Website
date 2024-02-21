@@ -1,0 +1,96 @@
+body
+{
+	background-color: #000000;
+
+	/*Makes content resizeable and central*/
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+}
+
+.window-exterior
+{
+	background-color: rgb(240,236,228);
+	border: 1px solid rgb(21,78,202);
+	border-radius: 10px 10px 2px 2px;
+	overflow: hidden;
+
+/*		makes content stack vertically*/
+	display: flex;
+	flex-direction: column;
+
+		/*Sizes container */
+	width: 80%;
+	height: 80%;
+
+/*		makes container central*/
+/*	box-sizing: border-box;
+	position: relative;*/
+}
+
+.window-bar
+{
+	width: 100%;
+	height: 32px;
+	display: flex;
+	align-items: center;
+	padding: 4px;
+	padding-left: 8px;
+
+/*	ensures that padding is included in size calculation*/
+	box-sizing: border-box;
+
+	font-size: 28px;
+	font-weight: bold;
+	font-family: "Trebuchet MS", sans-serif;
+	text-shadow: 2px 2px 2px rgba(0,0,25,0.5);
+	color: white;
+
+	background-color: rgb(36,93,218);
+	box-shadow: inset 0.2em 0.2em 0.2em 0 rgba(255,255,255,0.1), inset -0.2em -0.2em 0.2em 0 rgba(0,0,0,0.1);
+	border-bottom: 1px solid rgb(21,78,202);
+}
+
+.window-bar > div
+{
+	display: flex;
+	justify-content: end;
+	height: 100%;
+	width: 100%;
+}
+
+.window-bar > div > a
+{
+	height: 100%;
+	display: flex;
+	padding-right: 4px;
+	box-sizing: border-box;
+}
+
+.window-bar > div > a > img
+{
+	height: 100%;
+/*	cursor: pointer;*/
+}
+
+.window-interior
+{
+	border: 1px solid rgb(21,78,202);
+	width: 100%;
+	height: 100%;
+	font-family: "Tahoma", sans-serif;
+	color: black;
+
+	/*	ensures that padding is included in size calculation*/
+	box-sizing: border-box;
+
+}
+
+.paragraph-title
+{
+	text-align: center;
+	text-decoration: underline;
+	text-shadow: 0.1px 0.1px 0.1px rgba(0, 0, 0, 1);
+}

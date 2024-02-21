@@ -4,23 +4,41 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Beat Visualiser</title>
-	<link rel="stylesheet" href="styles.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
-	<script src="libs/music-tempo.min.js"></script>
+	<link rel="stylesheet" href="styles0.css">
 </head>
 <body>
-	<div class="window">
-		<h1 class="window-bar"> Demo </h1>
-		<div class="window-content-container">
-			<p id="box-title"> Hello! Welcome to the demo </p>
-			<p class="window-content"> Please upload a song. A music visualisation will be generated based on the detected beats. </p>
-			<form action="/action_page.php">
-				<input type="file" id="songFileInput" name="filename" class="window-content">
-			</form>
-			<button onclick="playVisualiser()" class="window-content">Play</button>
-			<div id="canvas-container">
+	<div class="window-exterior">
+		<nav class="window-bar">
+			<p> Demo </p>
+			<div>
+				<a>
+					<img src="resources/minimise.png"/>
+				</a>
+				<a>
+					<img src="resources/maximise.png"/>
+				</a>
+				<a>
+					<img src="resources/close.png"/>
+				</a>
+			</div>
+		</nav>
+		<div class="container-fluid g-0 window-interior">
+			<div class="row g-0 outer-container">
+				<div class="col-md-6 generic-content inner-container">
+					<a href="page2.html" styles="cursor: pointer;">
+						<img src="resources/preview.png" style="cursor: pointer;"/>
+					</a>
+				</div>
+				<div class="col-md-6 generic-content inner-container">
+					<p> Coming soon </p>
+				</div>
+				<div class="col-md-6 generic-content inner-container">
+					<p> Coming soon </p>
+				</div>
+				<div class="col-md-6 generic-content inner-container">
+					<p> Coming soon </p>
+				</div>
+			</div>
 		</div>
-	</div>
-	<script src="script.js"></script>
 </body>
 </html>

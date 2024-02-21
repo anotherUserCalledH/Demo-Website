@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Beat Visualiser</title>
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+	<script src="libs/music-tempo.min.js"></script>
+</head>
+	<body>
+		<div class="window-exterior">
+			<nav class="window-bar">
+				<p> Demo </p>
+				<div>
+					<a>
+						<img src="resources/minimise.png"/>
+					</a>
+					<a>
+						<img src="resources/maximise.png" onclick="makeCanvasFullscreen()" styles="cursor: pointer;"/>
+					</a>
+					<a href="index.html">
+						<img src="resources/close.png" styles="cursor: pointer;"/>
+					</a>
+				</div>
+			</nav>
+			<div class="indow-interior main-div">
+				<p class ="paragraph-title"> Hello! Welcome to the demo </p>
+				<p> Please upload a song. A music visualisation will be generated based on the detected beats. </p>
+				<form action="/action_page.php">
+					<input type="file" id="songFileInput" name="filename">
+				</form>
+				<button onclick="playVisualiser()">Play</button>
+				<div id="canvas-container">
+
+				</div>
+
+			</div>
+		<script src="visualiser.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
