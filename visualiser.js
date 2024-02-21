@@ -140,6 +140,7 @@ function setup()
 	let container = document.getElementById("canvas-container");
 	let dimensions = (container.clientWidth < container.clientHeight) ? container.clientWidth : container.clientHeight;
 
+	console.log(dimensions);
 	let canvas = createCanvas(dimensions, dimensions, WEBGL);
 
 
