@@ -1,0 +1,48 @@
+﻿@import url("bootstrap-grid.min.css");
+@import url("windowsxp-theme.css");
+
+*
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+body
+{
+	font-family: Arial, sans-serif;
+}
+
+.main-div
+{
+	padding: 10px;
+	font-size: 15px;
+
+	/*makes content stack vertically*/
+	display: flex;
+	flex-direction: column;
+}
+
+.main-div > *
+{
+	margin: 10px;
+}
+
+/*.main-div > p:nth-child(2)
+{
+	max-width: 500px;
+}*/
+
+.main-div > button
+{
+	width: max-content;
+	align-self: center;
+	padding-inline: 6px;
+}
+
+#canvas-container
+{
+	flex: 1;
+	margin: 0px;
+	justify-content: center;
+	display: flex;
+}

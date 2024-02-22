@@ -1,48 +1,48 @@
-﻿@import url("bootstrap-grid.min.css");
-@import url("windowsxp-theme.css");
+@import url("styles2.css");
 
-*
+.generic-content
 {
-	margin: 0px;
-	padding: 0px;
-}
-
-body
-{
-	font-family: Arial, sans-serif;
-}
-
-.main-div
-{
-	padding: 10px;
-	font-size: 15px;
-
-	/*makes content stack vertically*/
 	display: flex;
-	flex-direction: column;
-}
-
-.main-div > *
-{
-	margin: 10px;
-}
-
-/*.main-div > p:nth-child(2)
-{
-	max-width: 500px;
-}*/
-
-.main-div > button
-{
-	width: max-content;
-	align-self: center;
-	padding-inline: 6px;
-}
-
-#canvas-container
-{
-	flex: 1;
-	margin: 0px;
+	text-align: center;
 	justify-content: center;
-	display: flex;
+	align-items: center;
+	color: rgb(240,236,228);
+	background-color: black;
+}
+
+.inner-container
+{
+	border: 1px solid rgb(240,236,228);
+}
+
+.outer-container
+{
+	height: 100%;
+}
+
+.inner-container > a
+{
+	height: 100%
+}
+
+.inner-container > a > img
+{
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+@media (max-width: 767px)
+{
+	.h-md-25 { height: 25%!important; }
+}
+
+@media (min-width: 768px)
+{
+	.col-md-6
+	{
+		flex: 0 0 auto;
+	    width: 50%;
+	    height: 50%;
+	}
 }
