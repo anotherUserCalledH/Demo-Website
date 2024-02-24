@@ -44,6 +44,12 @@ function calcTempo(buffer)
 	return musicTempo.beats;
 }
 
+function displayErrorMessage()
+{
+	let textbox = document.getElementById("info-message");
+	textbox.innerHTML = "Error in beat detection. Common causes include: song with a weak drum beat, song with a varying BPM. Try another song!";
+}
+
 async function playVisualiser()
 {
 	let songFileInput = document.getElementById("songFileInput");
@@ -65,11 +71,17 @@ async function playVisualiser()
 		reader.onload = async function(fileEvent)
 		{
 			let buffer = await audioContext.decodeAudioData(fileEvent.target.result);
-			
-			beatArray = calcTempo(buffer);
-			audioPlayer = createAudio(URL.createObjectURL(songFile));
-			initialiseSketch();
-			console.log("Success!");
+			try
+			{
+				beatArray = calcTempo(buffer);
+				audioPlayer = createAudio(URL.createObjectURL(songFile));
+				initialiseSketch();
+			}
+			catch(err)
+			{
+				displayErrorMessage()
+				console.log("error");
+			}
 		}
 
 		reader.readAsArrayBuffer(songFile);
